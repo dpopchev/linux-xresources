@@ -46,7 +46,7 @@ src_dir := src
 
 configs += Xresources.d
 config_dsts += ${HOME}/.config/Xresources.d
-config_stamps += $(stamp_dir)/.stamp
+config_stamps += $(stamp_dir)/Xresources.d.stamp
 
 $(stamp_dir):
 	@$(call add_gitignore,$@)
@@ -62,9 +62,9 @@ $(config_stamps): $(stamp_dir)/%.stamp: | $(stamp_dir)
 install_config_targets := $(addprefix install-,$(configs))
 .PHONY: $(install_config_targets)
 $(install_config_targets): install-%: $(stamp_dir)/%.stamp
-	echo 'Work in progress'
-	echo 'Manually add target xresources by editing ~/.Xresources, e.g.'
-	echo '#include ~/.config/Xresources.d/xft'
+	@echo 'Work in progress'
+	@echo 'Manually add target xresources by editing ~/.Xresources, e.g.'
+	@echo '#include ~/.config/Xresources.d/xft'
 
 .PHONY: install
 install: $(install_config_targets)
