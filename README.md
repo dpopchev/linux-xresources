@@ -1,6 +1,6 @@
 # linux-xresources
 
-Configuration to distribute for `xresources`.
+Configuration to distribute for `Xresources`.
 
 ## Quickstart
 
