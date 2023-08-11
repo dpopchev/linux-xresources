@@ -64,7 +64,10 @@ install_config_targets := $(addprefix install-,$(configs))
 $(install_config_targets): install-%: $(stamp_dir)/%.stamp
 	@echo 'Work in progress'
 	@echo 'Manually add target xresources by editing ~/.Xresources, e.g.'
-	@echo '#include ~/.config/Xresources.d/xft'
+	@echo '#include .config/Xresources.d/xft'
+	@echo 'Verify all is fine trough "~/.xsession-errors"'
+	@echo 'If fails for file not found search append xrdb -I$$HOME...'
+	@echo 'usual candidate is .xinitrc'
 
 .PHONY: install
 install: $(install_config_targets)
